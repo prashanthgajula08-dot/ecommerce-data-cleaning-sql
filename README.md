@@ -4,6 +4,26 @@ A real-world **data cleaning project** using MySQL, applied on raw e-commerce cu
 
 ---
 
+## 📂 Repository Structure
+
+```
+ecommerce-data-cleaning-sql/
+│
+├── data/
+│   └── raw_data.csv              ← Raw/dirty data (before cleaning)
+│
+├── images/
+│   ├── cleaned_data_1.png        ← Cleaned data screenshots
+│   ├── cleaned_data_2.png
+│   ├── cleaned_data_3.png
+│   └── cleaned_data_4.png
+│
+├── ecommerce_data.sql            ← SQL data cleaning script
+└── README.md
+```
+
+---
+
 ## 📁 Dataset Overview
 
 **Table:** `eco` (inside `prashanthdb`)
@@ -151,15 +171,30 @@ WHERE product IS NULL OR order_id IS NULL;
 
 ---
 
-## 📊 Sample Cleaned Data
+## 📊 Raw Data (Before Cleaning)
 
-| id | order_id | firstname | product | quantity | price | city | state | payment_method | order_date | status |
-|----|----------|-----------|---------|----------|-------|------|-------|----------------|------------|--------|
-| 1 | ORD001 | Ravi | Laptop | 1 | 45999.00 | Hyderabad | TS | UPI | 2024-01-15 | Delivered |
-| 2 | ORD002 | Priya | Headphones | 2 | 1299.50 | Mumbai | MH | Credit Card | 2024-01-16 | Pending |
-| 3 | ORD003 | Arjun | Keyboard | 1 | 899.00 | Bangalore | KA | Net Banking | 2024-01-17 | Delivered |
-| 4 | ORD004 | Sneha | Mouse | 3 | 549.00 | Delhi | DL | UPI | 2024-01-18 | Shipped |
-| 5 | ORD005 | Kiran | Monitor | 1 | 12499.00 | Chennai | TN | Credit Card | 2024-01-20 | Delivered |
+> 📄 Full raw dataset: [`data/raw_data.csv`](data/raw_data.csv)
+
+The raw data contains issues like:
+- `'NA'` and empty strings instead of proper NULLs
+- Inconsistent city names (`Hyb`, `HYD` instead of `Hyderabad`)
+- Mixed-case payment methods (`upi`, `Upi`, `UPI`)
+- Missing prices, quantities, and order dates
+- Incorrect date formats
+
+---
+
+## ✅ Cleaned Data (After Cleaning)
+
+> All screenshots taken from MySQL Workbench after running the cleaning script.
+
+![Cleaned Data - Part 1](images/cleaned_data_1.png)
+
+![Cleaned Data - Part 2](images/cleaned_data_2.png)
+
+![Cleaned Data - Part 3](images/cleaned_data_3.png)
+
+![Cleaned Data - Part 4](images/cleaned_data_4.png)
 
 ---
 
@@ -167,8 +202,9 @@ WHERE product IS NULL OR order_id IS NULL;
 
 | Tool | Purpose |
 |------|---------|
-| **MySQL** | Database and SQL queries |
+| **MySQL Workbench** | Database management & query execution |
 | **SQL** | Data cleaning and transformation |
+| **GitHub** | Version control & project showcase |
 
 ---
 
